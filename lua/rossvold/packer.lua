@@ -10,7 +10,8 @@ return require('packer').startup(function(use)
         "ThePrimeagen/harpoon", -- delete harpoon.json if this fucks with you.
         branch = "harpoon2",
     }
-
+    use('ThePrimeagen/vim-be-good')
+    use('ThePrimeagen/git-worktree.nvim')
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.x',
     }
@@ -21,7 +22,6 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-surround')
     use('tpope/vim-fugitive')
-    use('ThePrimeagen/vim-be-good')
     use('evanleck/vim-svelte')
     use('pangloss/vim-javascript')
     use('HerringtonDarkholme/yats.vim')

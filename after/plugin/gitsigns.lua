@@ -39,7 +39,7 @@ require('gitsigns').setup {
     -- Preview changes in current hunk
     map('n', '<leader>gp', gs.preview_hunk)
     -- shows last commit for line
-    map('n', '<leader>gb', function() gs.blame_line{full=false} end)
+    map('n', '<leader>gb', function() gs.blame_line{full=true} end)
     -- Shows blame for current line
     map('n', '<leader>gc', gs.diffthis)
     -- shows us older versions, hitting td again will hide it

@@ -17,6 +17,11 @@ return require('packer').startup(function(use)
     }
     use('nvim-telescope/telescope-ui-select.nvim')
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use({
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+    })
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use('nvim-treesitter/playground')
     use('mbbill/undotree')

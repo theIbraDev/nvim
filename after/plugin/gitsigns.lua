@@ -1,3 +1,4 @@
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 require('gitsigns').setup {
   signs = {
     add = { text = '+' },
@@ -16,19 +17,16 @@ require('gitsigns').setup {
       vim.keymap.set(mode, l, r, opts)
     end
 
-    -- Navigation []d will jump to previous and next changes
-    map('n', ']c', function()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
 
-    map('n', '[c', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
+        -- repeat
+        vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_next)
+        vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
+        -- HAS TO BE AFTER REPEAT
+        local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+        -- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
 
+        vim.keymap.set({ "n", "x", "o" }, "mh", next_hunk_repeat)
+        vim.keymap.set({ "n", "x", "o" }, "Mh", prev_hunk_repeat)
     -- Actions
     -- Stage current hunk
     map({'n', 'v'}, '<leader>gs', ':Gitsigns stage_hunk<CR>')

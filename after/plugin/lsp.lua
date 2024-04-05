@@ -1,25 +1,20 @@
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  -- Go to definition.
- vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
- -- Hover the explanation of what's under the cursor
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
-  -- Search symbol in workspace
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-  -- Display diagnostics floating window
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  -- goto next diagnostic & open float
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  -- goto prev diagnostic open float
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  -- 'vim code actions', list all possible actions under cursor
-  vim.keymap.set("n", "<leader>lc", function() vim.lsp.buf.code_action() end, opts)
-  -- 'vim buffer references', list all references of the symbol under the cursor
-  vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
-  -- This renames all refrences of the symbol under the cursor. Very good for renaming components or interfaces used on many places
-  vim.keymap.set("n", "<leader>lR", function() vim.lsp.buf.rename() end, opts)
+    local opts = {buffer = bufnr, remap = false}
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "<leader>lc", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>lR", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_next) -- moves regardless of the last direction
+    vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
+    local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(vim.diagnostic.goto_next , vim.diagnostic.goto_prev)
+    vim.keymap.set({ "n", "x", "o" }, "md", next_diagnostic_repeat) -- Has to be below repeatable pair
+    vim.keymap.set({ "n", "x", "o" }, "Md", prev_diagnostic_repeat)
 end)
 
 require('mason').setup({})

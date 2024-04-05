@@ -5,8 +5,6 @@ vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- this is because i'm a tailwindcss scrub
-
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

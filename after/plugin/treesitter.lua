@@ -51,6 +51,7 @@ require'nvim-treesitter.configs'.setup {
                 ['mt'] = '@comment.outer',
                 ['mi'] = '@conditional.outer',
                 ['mv'] = '@assignment.lhs', -- Variable selector name
+                ['mn'] = '@assignment.lhs', -- Variable selector name
                 ['mc'] = '@class.outer',
                 ['ma'] = '@parameter.outer',
             },
@@ -60,6 +61,7 @@ require'nvim-treesitter.configs'.setup {
                 ['Mt'] = '@comment.outer',
                 ['Mi'] = '@conditional.outer',
                 ['Mv'] = '@assignment.lhs',
+                ['Mn'] = '@assignment.lhs',
                 ['Mc'] = '@class.outer',
                 ['Ma'] = '@parameter.outer',
             },

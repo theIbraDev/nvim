@@ -24,33 +24,44 @@ require'nvim-treesitter.configs'.setup {
             enable = true,
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
             keymaps = {
-                ['aa'] = '@parameter.outer',
-                ['ia'] = '@parameter.inner',
                 ['af'] = '@function.outer',
                 ['if'] = '@function.inner',
+                ['al'] = '@loop.outer',
+                ['il'] = '@loop.inner',
+                ['at'] = '@comment.outer',
+                ['ai'] = '@conditional.outer',
+                ['ii'] = '@conditional.inner',
+                ['an'] = '@assignment.lhs', -- Variable selector name
+                ['in'] = '@assignment.lhs', -- Variable selector name
+                ['av'] = '@assignment.outer', -- Variable selector value
+                ['iv'] = '@assignment.rhs', -- Variable selector value
                 ['ac'] = '@class.outer',
                 ['ic'] = '@class.inner',
-                ['ii'] = '@conditional.inner',
-                ['ai'] = '@conditional.outer',
-                ['il'] = '@loop.inner',
-                ['al'] = '@loop.outer',
-                ['at'] = '@comment.outer',
+                ['aa'] = '@parameter.outer',
+                ['ia'] = '@parameter.inner',
             },
         },
+
         move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
                 ['mf'] = '@function.outer',
-                ['mc'] = '@class.outer',
-                ['mt'] = '@comment.outer',
                 ['ml'] = '@loop.outer',
+                ['mt'] = '@comment.outer',
+                ['mi'] = '@conditional.outer',
+                ['mv'] = '@assignment.lhs', -- Variable selector name
+                ['mc'] = '@class.outer',
+                ['ma'] = '@parameter.outer',
             },
             goto_previous_start = {
                 ['Mf'] = '@function.outer',
-                ['Mc'] = '@class.outer',
-                ['Mt'] = '@comment.outer',
                 ['Ml'] = '@loop.outer',
+                ['Mt'] = '@comment.outer',
+                ['Mi'] = '@conditional.outer',
+                ['Mv'] = '@assignment.lhs',
+                ['Mc'] = '@class.outer',
+                ['Ma'] = '@parameter.outer',
             },
         },
     }

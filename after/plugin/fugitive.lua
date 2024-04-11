@@ -1,7 +1,4 @@
 vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
-
--- Removed 
-
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {
     -- Removed group
@@ -18,6 +15,8 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git push ]]
         end, opts)
 
+        -- Only used when commit messages are useless.
+        -- Looking at you merge bros
         vim.keymap.set("n", "<leader>scp", function ()
             vim.cmd [[ Git commit -m "update markdown" | Git push ]]
         end, opts)

@@ -26,6 +26,13 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git pull --rebase ]]
         end, opts)
 
+        -- Check if git config returns +refs/heads/*:refs/remotes/origin/*
+        vim.keymap.set("n", "<leader>c", function()
+            vim.cmd [[ Git config --get remote.origin.fetch ]]
+        end, opts)
+
+        -- Set git config. Needed for --bare repos
+        vim.keymap.set("n", "<leader>C", ":Git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'", opts);
         -- Allows you to push to a branch other than current branch NOTE: It allows me to easily set the branch i am pushing and any tracking needed if i did not set the branch up correctly
         vim.keymap.set("n", "<leader>gp", ":Git push -u origin ", opts);
 

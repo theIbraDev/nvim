@@ -18,6 +18,10 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git push ]]
         end, opts)
 
+        vim.keymap.set("n", "<leader>scp", function ()
+            vim.cmd [[ Git commit -m "." ]]
+        end, opts)
+
         -- Goat fugitive command. Pull with rebase.
         vim.keymap.set("n", "<leader>P", function()
             vim.cmd [[ Git pull --rebase ]]

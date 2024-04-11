@@ -29,6 +29,7 @@ require'nvim-treesitter.configs'.setup {
                 ['al'] = '@loop.outer',
                 ['il'] = '@loop.inner',
                 ['at'] = '@comment.outer',
+                ['it'] = '@comment.outer',
                 ['ai'] = '@conditional.outer',
                 ['ii'] = '@conditional.inner',
                 ['an'] = '@assignment.lhs', -- Variable selector name

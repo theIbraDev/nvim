@@ -1,0 +1,21 @@
+-- local plugins = {
+--   ('ThePrimeagen/git-worktree.nvim'),
+--   {
+--       'nvim-treesitter/nvim-treesitter',
+--       build = ":TSUpdate",
+--   },
+--   'nvim-treesitter/playground',
+--   'mbbill/undotree',
+--   'tpope/vim-surround',
+--   'tpope/vim-fugitive',
+--   'evanleck/vim-svelte',
+--   'pangloss/vim-javascript',
+--   'HerringtonDarkholme/yats.vim',
+--   "williamboman/mason.nvim",
+--   "williamboman/mason-lspconfig.nvim",
+--   "neovim/nvim-lspconfig",
+--   'nvim-tree/nvim-web-devicons',
+--   'nvim-lualine/lualine.nvim',
+--   "windwp/nvim-autopairs",
+--   "cloak !!",
+-- }

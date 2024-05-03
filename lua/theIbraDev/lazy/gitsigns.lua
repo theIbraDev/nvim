@@ -1,5 +1,8 @@
 return {
     'lewis6991/gitsigns.nvim',
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        },
     config = function()
         local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
         require('gitsigns').setup {

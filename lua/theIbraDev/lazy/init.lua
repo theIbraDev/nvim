@@ -4,9 +4,9 @@ return {
         name = "plenary"
     },
     {
-   'ThePrimeagen/vim-be-good',
+        'ThePrimeagen/vim-be-good',
     },
--- {
---     "nvim-treesitter/nvim-treesitter-textobjects",
--- },
+    {
+        "ThePrimeagen/git-worktree.nvim",
+    },
 }

@@ -3,8 +3,11 @@ return {
     config = function()
         vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
 
+        local theIbraDev_fugitive = vim.api.nvim_create_augroup("theIbraDev_Fugitive", {})
+
         local autocmd = vim.api.nvim_create_autocmd
         autocmd("BufWinEnter", {
+            group = theIbraDev_fugitive,
             -- Removed group
             pattern = "*",
             callback = function()
@@ -52,4 +55,4 @@ return {
             end,
         })
     end
-    }
+}

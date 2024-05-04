@@ -27,3 +27,10 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 --vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 --vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- Next quicklist item
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+-- Next locallist item
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")

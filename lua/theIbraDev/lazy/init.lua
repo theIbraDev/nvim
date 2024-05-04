@@ -10,6 +10,6 @@ return {
         "ThePrimeagen/git-worktree.nvim",
     },
     {
-   "nvim-treesitter/playground",
+        "nvim-treesitter/playground",
     },
 }

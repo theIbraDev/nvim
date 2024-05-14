@@ -25,7 +25,7 @@ return {
                     node_decremental = '<c-backspace>',
                 },
             },
-            ensure_installed = { "rust", "c", "javascript", "html", "typescript", "lua", "svelte", "vim", "vimdoc", "query" },
+            ensure_installed = { "rust", "c", "javascript", "html", "css", "typescript", "lua", "svelte", "vim", "vimdoc", "query" },
             -- The greatest setting of all fucking time
             textobjects = {
                 select = {

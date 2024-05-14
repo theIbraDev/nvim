@@ -7,7 +7,7 @@ return {
         'ThePrimeagen/vim-be-good',
     },
     {
-        "ThePrimeagen/git-worktree.nvim",
+        "theIbraDev/git-worktree.nvim",
     },
     {
         "nvim-treesitter/playground",
@@ -16,8 +16,11 @@ return {
         'nvim-tree/nvim-web-devicons'
     },
     {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {}
+        'evanleck/vim-svelte',
+    },
+    {
+        "luckasRanarison/tailwind-tools.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {} -- your configuration
     }
 }

@@ -1,40 +1,43 @@
-vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+-- Search
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
-vim.opt.guicursor = 'n-v-c-i:block'
-
+-- Filetree
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Buffer
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
-
-
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+-- This is suprising how often this annoys me.
+vim.opt.formatoptions:remove "o"
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
+-- Theme
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
+-- Performance
 vim.opt.updatetime = 50
 
--- Set a column at 120 characters to keep lines from getting too long
+-- Clean code
 vim.opt.colorcolumn = "80"
 vim.opt.wrap = false
 
+-- Leader
 vim.g.mapleader = " "
 
--- highlight yanked text for 200ms using the "Visual" highlight group
+-- Yank
 vim.cmd[[
 augroup highlight_yank
 autocmd!

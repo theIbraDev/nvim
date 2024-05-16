@@ -8,10 +8,10 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
+        "L3MON4D3/LuaSnip", -- Snippets
         "saadparwaiz1/cmp_luasnip",
-        "j-hui/fidget.nvim",
-        "nvim-treesitter/nvim-treesitter-textobjects",
+        "j-hui/fidget.nvim", -- Shows LSP activity on the bottom right
+        "nvim-treesitter/nvim-treesitter-textobjects", -- Extends tresitter selection
     },
 
     config = function()
@@ -103,11 +103,12 @@ return {
                 local opts = { buffer = e.buf }
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
                 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
-                vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
+                vim.keymap.set("n", "<leader>lq", function() vim.lsp.buf.workspace_symbol() end)
                 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
                 vim.keymap.set("n", "<leader>lc", function() vim.lsp.buf.code_action() end, opts)
                 vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
                 vim.keymap.set("n", "<leader>lR", function() vim.lsp.buf.rename() end, opts)
+
                 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_next) -- moves regardless of the last direction
                 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
                 local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(vim.diagnostic.goto_next , vim.diagnostic.goto_prev)

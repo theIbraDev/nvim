@@ -47,7 +47,7 @@ return {
                 vim.keymap.set("n", "<leader>go", ":Git remote add origin ", opts);
                 -- if we don't have an origin set up for the current
                 -- repository.
-                -- vim.keymap.set(
+                -- vim.keymap.set
                 -- Rebase current branch into X branch
                 vim.keymap.set("n", "<leader>gr", ":Git rebase ", opts);
 

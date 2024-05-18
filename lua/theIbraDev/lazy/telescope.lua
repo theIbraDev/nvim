@@ -22,6 +22,7 @@ return {
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>p', builtin.find_files, {})
         vim.keymap.set('n', '<leader>tx', builtin.commands, {})
+        vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>tc', builtin.git_commits, {})
         vim.keymap.set('n', '<leader>tq', builtin.quickfix, {})
         vim.keymap.set('n', '<leader>tQ', builtin.quickfixhistory, {})

@@ -8,6 +8,7 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
+        "onsails/lspkind.nvim",
         "L3MON4D3/LuaSnip", -- Snippets
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim", -- Shows LSP activity on the bottom right

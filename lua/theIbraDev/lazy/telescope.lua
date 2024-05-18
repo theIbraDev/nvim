@@ -26,6 +26,7 @@ return {
         vim.keymap.set('n', '<leader>tc', builtin.git_commits, {})
         vim.keymap.set('n', '<leader>tq', builtin.quickfix, {})
         vim.keymap.set('n', '<leader>tQ', builtin.quickfixhistory, {})
+        vim.keymap.set('n', '<leader>tS', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>ts', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") });
         end)

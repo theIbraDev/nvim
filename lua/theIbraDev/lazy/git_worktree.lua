@@ -3,6 +3,7 @@ return {
     dependencies = {
         'nvim-lua/plenary.nvim'
     },
+
     config = function ()
         -- Defaults
         require("git-worktree").setup({
@@ -13,4 +14,5 @@ return {
             autopush = true -- default: false,
         })
     end
+
 }

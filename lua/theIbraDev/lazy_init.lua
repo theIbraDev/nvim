@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "theIbraDev.lazy",
+    spec = "theIbraDev.plugins",
     change_detection = { notify = false }
 })

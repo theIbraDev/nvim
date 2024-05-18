@@ -7,9 +7,6 @@ return {
         'ThePrimeagen/vim-be-good',
     },
     {
-        "theIbraDev/git-worktree.nvim",
-    },
-    {
         "nvim-treesitter/playground",
     },
     {

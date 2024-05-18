@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.keymap.set({ "n", "v"}, "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 vim.keymap.set("n", "-", vim.cmd.Ex)
 

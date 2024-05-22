@@ -1,3 +1,4 @@
+-- Lsp
 require("neodev").setup({
 	-- library = {
 	--   plugins = { "nvim-dap-ui" },
@@ -120,17 +121,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 		vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, { buffer = 0 })
-		vim.keymap.set("n", "<leader>lq", vim.lsp.buf.workspace_symbol)
 		vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_next) -- moves regardless of the last direction
 		vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
 		vim.keymap.set({ "n", "x", "o" }, "md", next_diagnostic_repeat) -- Has to be below repeatable pair
 		vim.keymap.set({ "n", "x", "o" }, "Md", prev_diagnostic_repeat)
 		--new
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 })
+		vim.keymap.set("n", "gR", vim.lsp.buf.rename, { buffer = 0 })
+		vim.keymap.set("n", "gq", vim.lsp.buf.workspace_symbol)
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 		vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
-		vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
-		vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
+		vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { buffer = 0 })
 
 		local filetype = vim.bo[bufnr].filetype
 		if disable_semantic_tokens[filetype] then

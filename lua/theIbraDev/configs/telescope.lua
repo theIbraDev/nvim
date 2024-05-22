@@ -1,4 +1,9 @@
+-- Telescope
 require("telescope").setup({
+	file_ignore_patterns = {
+		"node_modules",
+		".svg",
+	},
 	extensions = {
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
@@ -7,7 +12,6 @@ require("telescope").setup({
 		},
 	},
 })
-
 require("telescope").load_extension("ui-select")
 
 local builtin = require("telescope.builtin")

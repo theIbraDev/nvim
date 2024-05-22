@@ -18,7 +18,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 -- This is suprising how often this annoys me.
-vim.opt.formatoptions:remove "o"
+vim.opt.formatoptions:remove("o")
 
 -- Theme
 vim.opt.termguicolors = true
@@ -38,9 +38,9 @@ vim.opt.wrap = false
 vim.g.mapleader = " "
 
 -- Yank
-vim.cmd[[
+vim.cmd([[
 augroup highlight_yank
 autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
 augroup END
-]]
+]])

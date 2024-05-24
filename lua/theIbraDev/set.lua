@@ -3,6 +3,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 
 -- Filetree
 vim.opt.nu = true
@@ -31,7 +32,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- Clean code
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 vim.opt.wrap = false
 
 -- Leader

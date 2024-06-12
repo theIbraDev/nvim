@@ -53,11 +53,13 @@ require("nvim-treesitter.configs").setup({
 				["aa"] = "@parameter.outer",
 				["ia"] = "@parameter.inner",
 			},
+                  include_surrounding_whitespace = true,
 		},
 
 		move = {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
+
 			goto_next_start = {
 				["mf"] = "@function.outer",
 				["ml"] = "@loop.outer",
@@ -73,8 +75,8 @@ require("nvim-treesitter.configs").setup({
 				["Ml"] = "@loop.outer",
 				["Mt"] = "@comment.outer",
 				["Mi"] = "@conditional.outer",
-				["Mv"] = "@assignment.rhs",
-				["Mn"] = "@assignment.lhs",
+				["Mv"] = "@assignment.rhs", -- Variable select value
+				["Mn"] = "@assignment.lhs", -- Variable selector name
 				["Mc"] = "@class.outer",
 				["Ma"] = "@parameter.outer",
 			},

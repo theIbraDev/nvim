@@ -1,5 +1,20 @@
 -- Telescope
+local actions = require "telescope.actions"
+local builtin = require("telescope.builtin")
+
 require("telescope").setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+                ["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
+            },
+            n = {
+                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+                ["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
+            },
+        },
+    },
 	file_ignore_patterns = {
 		"node_modules",
 		".svg",
@@ -12,9 +27,10 @@ require("telescope").setup({
 		},
 	},
 })
+
 require("telescope").load_extension("ui-select")
 
-local builtin = require("telescope.builtin")
+-- Builtin
 vim.keymap.set("n", "<leader>p", builtin.find_files, {})
 vim.keymap.set("n", "<leader>tx", builtin.commands, {})
 vim.keymap.set("n", "<leader>td", builtin.diagnostics, {})
@@ -26,9 +42,6 @@ vim.keymap.set("n", "<leader>tS", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>ts", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-
--- Branch only
 vim.keymap.set("n", "<leader>tb", builtin.git_branches, {})
--- Worktree only
 vim.keymap.set("n", "<leader>tw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
 vim.keymap.set("n", "<leader>tW", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")

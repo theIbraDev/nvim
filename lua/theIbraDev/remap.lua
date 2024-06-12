@@ -35,3 +35,6 @@ vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 -- Next locallist item
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
+
+-- Open qflist
+vim.keymap.set("n", "<C-q>", "<cmd>copen<CR>")

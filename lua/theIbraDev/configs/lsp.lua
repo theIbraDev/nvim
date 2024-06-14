@@ -1,5 +1,7 @@
-local cmp_lsp = require("cmp_nvim_lsp")
-local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+local capabilities = nil
+      if pcall(require, "cmp_nvim_lsp") then
+        capabilities = require("cmp_nvim_lsp").default_capabilities()
+      end
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 local lspconfig = require("lspconfig")
 

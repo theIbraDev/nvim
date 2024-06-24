@@ -1,15 +1,12 @@
--- Search
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.inccommand = "split"
 
--- Filetree
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Buffer
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -32,10 +29,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80,120"
 vim.opt.wrap = false
 
--- Leader
-vim.g.mapleader = " "
 
--- Yank
 vim.cmd([[
 augroup highlight_yank
 autocmd!

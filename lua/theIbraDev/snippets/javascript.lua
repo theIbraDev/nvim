@@ -15,7 +15,7 @@ ls.add_snippets("typescript", {
     s("alerts", {
         isn(1, {
             t({'import alerts from "apialerts-js"',
-                'const magpie_key = import.meta.env.VITE_MAGPIE;',
+                'const magpie_key = import.meta.env.VITE_MAGPIE; // Remember to double check that .env is set to VITE_MAGPIE',
                 'alerts.setApiKey(magpie_key)'})
         }, "")
     }),

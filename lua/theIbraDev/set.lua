@@ -18,20 +18,17 @@ vim.opt.smartindent = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
--- This is suprising how often this annoys me.
+-- Suprising how often this annoys me.
 vim.opt.formatoptions:remove("o")
 
--- Theme
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- Performance
 vim.opt.updatetime = 50
 
--- Clean code
 vim.opt.colorcolumn = "80,120"
 vim.opt.wrap = false
 

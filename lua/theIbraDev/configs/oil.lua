@@ -8,10 +8,21 @@ require("oil").setup({
 	view_options = {
 		show_hidden = true,
 	},
+    float = {
+        -- Padding around the floating window
+        padding = 2,
+        max_width = 0,
+        max_height = 0,
+        border = "rounded",
+        win_options = {
+            winblend = 0,
+        },
+        preview_split = "right",
+        override = function(conf)
+            return conf
+        end,
+    },
 })
 
---      -- Open parent directory in current window
---      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
---    -- Open parent directory in floating window
 vim.keymap.set("n", "<Leader>-", require("oil").toggle_float)
+

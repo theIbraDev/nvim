@@ -1,7 +1,7 @@
 local capabilities = nil
-      if pcall(require, "cmp_nvim_lsp") then
-        capabilities = require("cmp_nvim_lsp").default_capabilities()
-      end
+if pcall(require, "cmp_nvim_lsp") then
+    capabilities = require("cmp_nvim_lsp").default_capabilities()
+end
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 local lspconfig = require("lspconfig")
 
@@ -46,7 +46,41 @@ require("mason-lspconfig").setup({
                     vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
                 end,
             })
-        end
+        end,
+
+        ["tsserver"] = function ()
+            lspconfig.tsserver.setup({
+                capabilities = capabilities,
+                on_attach = function()
+                    vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
+                end,
+                settings = {
+                    javascript = {
+                        inlayHints = {
+                            includeInlayEnumMemberValueHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayVariableTypeHints = false,
+                        },
+                    },
+                    typescript = {
+                        inlayHints = {
+                            includeInlayEnumMemberValueHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayVariableTypeHints = false,
+                        },
+                    },
+                },
+            })
+        end,
+
 
     },
 })
@@ -71,7 +105,7 @@ autocmd("LspAttach", {
     group = ibraGroup,
     callback = function(e)
         local opts = { buffer = e.buf } vim.keymap.set("n", "gd", function() vim.lsp.buf.definition()
-            end, opts) vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+        end, opts) vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
         vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end, opts)

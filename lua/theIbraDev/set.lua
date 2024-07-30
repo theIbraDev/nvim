@@ -8,15 +8,17 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.shiftwidth = 0 -- Defaults to 8, when 0, it's the same as tabstop
+vim.opt.softtabstop = 8
+vim.opt.expandtab = false
 vim.opt.smartindent = true
+vim.opt.list = true
+vim.opt.listchars = "tab:⇥-"
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
--- Suprising how often this annoys me.
-vim.opt.formatoptions:remove("o")
+vim.opt.formatoptions:remove("o") -- Suprising how often this annoys me.
 
 vim.opt.termguicolors = true
 

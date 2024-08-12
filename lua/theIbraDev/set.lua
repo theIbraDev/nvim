@@ -7,13 +7,21 @@ vim.opt.inccommand = "split"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Indent / show blankspace
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 0 -- Defaults to 8, when 0, it's the same as tabstop
 vim.opt.softtabstop = 8
 vim.opt.expandtab = false
 vim.opt.smartindent = true
 vim.opt.list = true
-vim.opt.listchars = "tab:⇥-"
+vim.opt.listchars = "tab:| "
+
+-- Folds
+vim.o.foldcolumn = "0" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 vim.opt.swapfile = false
 vim.opt.backup = false

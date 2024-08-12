@@ -1,20 +1,21 @@
+-- TODO ADD COLORSCHEME TO TELESCOPE
 -- Telescope
 local actions = require "telescope.actions"
 local builtin = require("telescope.builtin")
 
 require("telescope").setup({
     defaults = {
-        mappings = {
-            i = {
-                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                ["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
-            },
-            n = {
-                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                ["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
-            },
-        },
-    },
+			mappings = {
+				i = {
+					["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+					["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
+				},
+				n = {
+					["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+					["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
+				},
+			},
+	},
 	file_ignore_patterns = {
 		"node_modules",
 		".svg",

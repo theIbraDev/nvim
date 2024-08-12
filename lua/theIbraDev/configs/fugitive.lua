@@ -13,6 +13,8 @@ autocmd("BufWinEnter", {
 			return
 		end
 
+		vim.cmd.colorscheme('carbonfox')
+
 		local bufnr = vim.api.nvim_get_current_buf()
 		local opts = { buffer = bufnr, remap = false }
 

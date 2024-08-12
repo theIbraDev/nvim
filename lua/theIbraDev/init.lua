@@ -2,11 +2,12 @@ require("theIbraDev.set")
 require("theIbraDev.remap")
 require("theIbraDev.lazy_init")
 require("theIbraDev.terminal")
+require("theIbraDev.theme")
 
 local augroup = vim.api.nvim_create_augroup
-local ibraGroup = augroup("ibraGroup", {})
-
 local autocmd = vim.api.nvim_create_autocmd
+
+local ibraGroup = augroup("ibraGroup", {})
 local yank_group = augroup("HighlightYank", {})
 
 function R(name)

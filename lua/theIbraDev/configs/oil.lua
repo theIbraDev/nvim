@@ -1,5 +1,5 @@
 require("oil").setup({
-	default_file_explorer = false,
+	default_file_explorer = true,
 	columns = { "icon" },
 	keymaps = {
 		["<C-h>"] = false,
@@ -25,4 +25,4 @@ require("oil").setup({
 })
 
 vim.keymap.set("n", "<Leader>-", require("oil").toggle_float)
-
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

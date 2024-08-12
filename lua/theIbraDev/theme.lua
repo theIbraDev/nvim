@@ -1,4 +1,12 @@
--- Change font when entering a buffer
+-- Change theme when exiting
+vim.api.nvim_create_autocmd("BufLeave", {
+	group = vim.api.nvim_create_augroup("theme_swithcer", {}),
+	callback = function()
+		print('Leaving buffer')
+			vim.cmd.colorscheme('carbonfox')
+	end,
+})
+-- Change theme when entering a buffer
 vim.api.nvim_create_autocmd("BufEnter", {
 	group = vim.api.nvim_create_augroup("theme_swithcer", {}),
 	callback = function()
@@ -12,19 +20,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 			vim.cmd.colorscheme('gruvbox-baby')
 		elseif vim.bo.filetype == "typescript" then
 			vim.cmd.colorscheme('rose-pine-main')
-		elseif vim.bo.filetype ~= "telescope" then
-			-- Do nothing
 		else
 			vim.cmd.colorscheme('carbonfox')
 		end
 	end,
 })
--- Change font to default when leaving a buffer
--- vim.api.nvim_create_autocmd("BufLeave", {
--- 	group = vim.api.nvim_create_augroup("theme_swithcer", {}),
--- 	callback = function()
--- 		print('leaving buffer')
--- 		vim.cmd.colorscheme('carbonfox')
--- 	end,
--- })
---

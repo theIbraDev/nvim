@@ -13,5 +13,27 @@ ls.add_snippets("svelte", {
         t('print("hello '),
         i(1),
         t('world")'),
-    })
+    }),
+	s("meta", fmt([[
+<!--50-60, not verbose or vague-->
+<title>{title}</title>
+<!-- Meta description, should always be less than 160 characters-->
+	<meta
+		name="description"
+		content="{content}" />
+	<!-- Unfollow means we don't vouch for the links on this page-->
+	<meta
+		name="robots"
+		content="{index}, {follow}"/>
+	]], {
+			title = i(1, "title"),
+			content = i(2, "content"),
+			index = i(3, "index"),
+			follow = i(4, "follow"),
+		},
+		{
+			repeat_duplicates = true
+		})),
 })
+
+

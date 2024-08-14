@@ -13,6 +13,20 @@ return {
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
+			{"zbirenbaum/copilot.lua",
+				config = function ()
+					require("copilot").setup({
+						suggestion = { enabled = false },
+						panel = { enabled = false },
+					})
+				end
+			},
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function ()
+					require("copilot_cmp").setup()
+				end
+			},
 		},
 		config = function()
 			require("theIbraDev.configs.completion")

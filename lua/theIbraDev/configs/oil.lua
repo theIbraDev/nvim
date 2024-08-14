@@ -1,5 +1,5 @@
 require("oil").setup({
-	default_file_explorer = true,
+	default_file_explorer = false,
 	columns = { "icon" },
 	keymaps = {
 		["<C-h>"] = false,
@@ -8,6 +8,9 @@ require("oil").setup({
 	view_options = {
 		show_hidden = true,
 	},
+	win_options = {
+		winbar = "%{v:lua.require('oil').get_current_dir()}",
+	},
     float = {
         -- Padding around the floating window
         padding = 2,
@@ -15,7 +18,7 @@ require("oil").setup({
         max_height = 0,
         border = "rounded",
         win_options = {
-            winblend = 0,
+			winblend = 0,
         },
         preview_split = "right",
         override = function(conf)
@@ -25,4 +28,4 @@ require("oil").setup({
 })
 
 vim.keymap.set("n", "<Leader>-", require("oil").toggle_float)
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

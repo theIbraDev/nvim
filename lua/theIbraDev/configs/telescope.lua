@@ -33,7 +33,7 @@ require("telescope").load_extension("ui-select")
 
 -- Builtin
 vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-vim.keymap.set("n", "<leader>tx", builtin.commands, {})
+vim.keymap.set("n", "<leader>tc", builtin.commands, {})
 vim.keymap.set("n", "<leader>td", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>th", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>tc", builtin.git_commits, {})

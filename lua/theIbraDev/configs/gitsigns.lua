@@ -34,7 +34,7 @@ require("gitsigns").setup({
 		map("n", "<leader>gb", function()
 			gs.blame_line({ full = true })
 		end)
-		map("n", "<leader>gc", gs.diffthis)
+		map("n", "<leader>gd", gs.diffthis)
 		map("n", "<leader>gx", gs.toggle_deleted)
 
 		-- Text object

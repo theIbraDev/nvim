@@ -37,7 +37,4 @@ autocmd("BufWinEnter", {
 		end, opts)
 		vim.keymap.set("n", "<leader>C", ":Git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'", opts)
 	end,
-	-- rework this conflict stuff, this is useless
-	-- vim.keymap.set("n", "<leaader>gr", "<cmd>diffget //2<CR>"),
-	-- vim.keymap.set("n", "gd", "<cmd>diffget //3<CR>"),
 })

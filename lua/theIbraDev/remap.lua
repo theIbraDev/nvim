@@ -1,3 +1,7 @@
+-- disable default of ctrl z
+vim.keymap.set("n", "<C-z>", "<Nop>")
+-- ctrl + z increment number
+vim.keymap.set("n", "<C-z>", "<C-a>")
 vim.keymap.set({ "n", "v"}, "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 vim.keymap.set("n", "-", vim.cmd.Ex)

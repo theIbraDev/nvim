@@ -48,8 +48,8 @@ cmp.setup({
 		),
 	},
 	sources = cmp.config.sources({
-		{ name = "luasnip" },
 		{ name = 'nvim_lsp' },
+		{ name = "luasnip" },
 		{ name = 'copilot' },
 		{ name = "path" },
 	}, {

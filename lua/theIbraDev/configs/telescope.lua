@@ -45,6 +45,8 @@ vim.keymap.set("n", "<leader>ts", function()
 end)
 vim.keymap.set("n", "<leader>tb", builtin.git_branches, {})
 vim.keymap.set("n", "<leader>tB", builtin.buffers, {})
-vim.keymap.set("n", "<leader>tw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+
+require('telescope').load_extension('git_worktree')
+vim.keymap.set("n", "<leader>tw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktree()<CR>")
 vim.keymap.set("n", "<leader>tW", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 

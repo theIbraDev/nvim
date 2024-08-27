@@ -8,6 +8,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local ibraGroup = augroup("ibraGroup", {})
+local startup = augroup("onStartup", {})
 local yank_group = augroup("HighlightYank", {})
 
 function R(name)
@@ -35,6 +36,12 @@ autocmd({ "BufWritePre" }, {
 	group = ibraGroup,
 	pattern = "*",
 	command = [[%s/\s\+$//e]],
+})
+
+autocmd({ "vimEnter" }, {
+	group = startup,
+	command = "Screenkey toggle",
+	desc = "Autostart Screenkey on VimEnter",
 })
 
 vim.g.netrw_browse_split = 0

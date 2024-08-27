@@ -13,4 +13,3 @@ Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
         Hooks.builtins.update_current_buffer_on_switch(path, prev_path)
     end
 end)
-

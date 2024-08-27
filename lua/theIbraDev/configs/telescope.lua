@@ -2,6 +2,8 @@
 -- Telescope
 local actions = require "telescope.actions"
 local builtin = require("telescope.builtin")
+require("telescope").load_extension("ui-select")
+require("telescope").load_extension("git_worktree")
 
 require("telescope").setup({
     defaults = {
@@ -29,24 +31,25 @@ require("telescope").setup({
 	},
 })
 
-require("telescope").load_extension("ui-select")
-
--- Builtin
-vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-vim.keymap.set("n", "<leader>tc", builtin.commands, {})
-vim.keymap.set("n", "<leader>td", builtin.diagnostics, {})
-vim.keymap.set("n", "<leader>th", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>tc", builtin.git_commits, {})
-vim.keymap.set("n", "<leader>tq", builtin.quickfix, {})
-vim.keymap.set("n", "<leader>tQ", builtin.quickfixhistory, {})
-vim.keymap.set("n", "<leader>tS", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>ts", function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
-vim.keymap.set("n", "<leader>tb", builtin.git_branches, {})
+-- Keymaps
+vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "[t]elescope []" })
+vim.keymap.set("n", "<leader>tc", builtin.commands, { desc = "[t]elescope [c]ommands" })
+vim.keymap.set("n", "<leader>td", builtin.diagnostics, { desc = "[t]elescope [d]iagnostics" })
+vim.keymap.set("n", "<leader>th", builtin.help_tags, { desc = "[t]elescope [h]elp" })
+vim.keymap.set("n", "<leader>tgc", builtin.git_commits, { desc = "[t]elescope [g]it [c]ommits" })
+vim.keymap.set("n", "<leader>tq", builtin.quickfix, { desc = "[t]elescope [q]uickfix" })
+vim.keymap.set("n", "<leader>tQ", builtin.quickfixhistory, { desc = "[t]elescope [Q]uickfix history" })
+vim.keymap.set("n", "<leader>tS", builtin.live_grep, { desc = "[t]elescope [S]earch live" })
+vim.keymap.set("n", "<leader>tk", builtin.grep_string, { desc = "[t]telescope grep [k]eyword" })
+vim.keymap.set("n", "<leader>ts", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
+vim.keymap.set("n", "<leader>tgb", builtin.git_branches, { desc = "[t]elescope [g]it [b]ranches"})
 vim.keymap.set("n", "<leader>tB", builtin.buffers, {})
+vim.keymap.set("n", "<leader>tn", "<CMD>Telescope notify<CR>" )
 
-require('telescope').load_extension('git_worktree')
-vim.keymap.set("n", "<leader>tw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktree()<CR>")
-vim.keymap.set("n", "<leader>tW", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
+vim.keymap.set("n", "<leader>tw", require("telescope").extensions.git_worktree.git_worktree, {
+	desc = "[t]elescope [w]orktrees",
+})
+vim.keymap.set("n", "<leader>tW", require('telescope').extensions.git_worktree.create_git_worktree, {
+	desc = "[t]elescope [W]orktrees",
+})

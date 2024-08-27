@@ -4,7 +4,7 @@ require("screenkey").setup({
         col = vim.o.columns - 1,
         relative = "editor",
         anchor = "NE",
-        width = 40,
+        width = 20,
         height = 1,
         border = "single",
         title = "Nvim keypresses",

@@ -43,7 +43,7 @@ vim.keymap.set("n", "<leader>tS", builtin.live_grep, { desc = "[t]elescope [S]ea
 vim.keymap.set("n", "<leader>tk", builtin.grep_string, { desc = "[t]telescope grep [k]eyword" })
 vim.keymap.set("n", "<leader>ts", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
 vim.keymap.set("n", "<leader>tgb", builtin.git_branches, { desc = "[t]elescope [g]it [b]ranches"})
-vim.keymap.set("n", "<leader>tB", builtin.buffers, {})
+vim.keymap.set("n", "<leader>tb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>tn", "<CMD>Telescope notify<CR>" )
 
 

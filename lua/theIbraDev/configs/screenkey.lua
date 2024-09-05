@@ -14,7 +14,7 @@ require("screenkey").setup({
         noautocmd = false,
     },
     compress_after = 3,
-    clear_after = 3,
+    clear_after = 8,
     disable = {
         filetypes = {},
         buftypes = {},

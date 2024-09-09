@@ -38,12 +38,6 @@ autocmd({ "BufWritePre" }, {
 	command = [[%s/\s\+$//e]],
 })
 
-autocmd({ "vimEnter" }, {
-	group = startup,
-	command = "Screenkey toggle",
-	desc = "Autostart Screenkey on VimEnter",
-})
-
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25

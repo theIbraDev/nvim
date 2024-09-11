@@ -13,11 +13,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- Easily hit escape in terminal mode.
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
--- Open a terminal at the bottom of the screen with a fixed height.
+-- Open terminal in new tab
 vim.keymap.set("n", "<Leader>,t", function()
-	vim.cmd.new()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 12)
-	vim.wo.winfixheight = true
+	vim.cmd.tabnew()
 	vim.cmd.term()
+	-- name the buffer "terminal"
+	vim.api.nvim_buf_set_name(0, "terminal")
 end)

@@ -34,6 +34,7 @@ require("telescope").setup({
 -- Keymaps
 vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "[t]elescope []" })
 vim.keymap.set("n", "<leader>tc", builtin.commands, { desc = "[t]elescope [c]ommands" })
+vim.keymap.set("n", "<leader>tr", builtin.registers, { desc = "[t]elescope [r]egisters" })
 vim.keymap.set("n", "<leader>td", builtin.diagnostics, { desc = "[t]elescope [d]iagnostics" })
 vim.keymap.set("n", "<leader>th", builtin.help_tags, { desc = "[t]elescope [h]elp" })
 vim.keymap.set("n", "<leader>tgc", builtin.git_commits, { desc = "[t]elescope [g]it [c]ommits" })

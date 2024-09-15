@@ -9,10 +9,10 @@ local i = ls.insert_node
 local isn = ls.indent_snippet_node
 
 ls.add_snippets("svelte", {
-    s("test", {
-        t('print("hello '),
+    s("comment", {
+        t('<!--'),
         i(1),
-        t('world")'),
+        t('-->'),
     }),
 	s("meta", fmt([[
 <!--50-60, not verbose or vague-->

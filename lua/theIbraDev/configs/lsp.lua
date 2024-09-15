@@ -12,7 +12,7 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"gopls",
 		"svelte",
-		"tsserver",
+		"ts_ls",
 		"eslint",
 	},
 	handlers = {
@@ -48,8 +48,8 @@ require("mason-lspconfig").setup({
 			})
 		end,
 
-		["tsserver"] = function()
-			lspconfig.tsserver.setup({
+		["ts_ls"] = function()
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				on_attach = function()
 					vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
@@ -145,16 +145,19 @@ require("conform").setup({
 		lua = { "stylua" },
 		-- Conform will run multiple formatters sequentially
 		python = { "isort", "black" },
+
 		-- Use a sub-list to run only the first available formatter
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		typescript = { "prettierd", "prettier", stop_after_first = true },
 		svelte = { "prettierd", "prettier", stop_after_first = true },
 	},
+	-- vim.keymap.set leader f to format
+	vim.cmd("nnoremap <leader>f <cmd>lua require('conform').format()<CR>"),
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		require("conform").format({ bufnr = args.buf })
+-- 	end,
+-- })

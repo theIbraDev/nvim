@@ -17,6 +17,4 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 vim.keymap.set("n", "<Leader>,t", function()
 	vim.cmd.tabnew()
 	vim.cmd.term()
-	-- name the buffer "terminal"
-	vim.api.nvim_buf_set_name(0, "terminal")
 end)

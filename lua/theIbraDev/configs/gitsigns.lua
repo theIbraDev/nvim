@@ -2,8 +2,8 @@ local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 require("gitsigns").setup({
 	signs = {
 		add = { text = "+" },
-		change = { text = "~" },
-		delete = { text = "_" },
+		change = { text = "" },
+		delete = { text = "󰗨" },
 		topdelete = { text = "‾" },
 		changedelete = { text = "~" },
 	},

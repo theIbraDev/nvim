@@ -1,27 +1,38 @@
--- TODO ADD COLORSCHEME TO TELESCOPE
--- Telescope
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("git_worktree")
 
 require("telescope").setup({
-    defaults = {
-			mappings = {
-				i = {
-					["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-					["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
-				},
-				n = {
-					["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-					["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
-				},
+	defaults = {
+
+		mappings = {
+			i = {
+				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+				["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
 			},
+			n = {
+				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+				["<C-w>"] = actions.smart_add_to_qflist + actions.open_qflist,
+			},
+		},
+
+		layout_strategy = "vertical",
+		layout_config = {
+			height = vim.o.lines,
+			width = vim.o.columns,
+			prompt_position = "top",
+			preview_height = 0.4, -- 60% of available lines
+			preview_cutoff = 2,
+			mirror = true,
+		},
 	},
+
 	file_ignore_patterns = {
 		"node_modules",
 		".svg",
 	},
+
 	extensions = {
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
@@ -42,15 +53,16 @@ vim.keymap.set("n", "<leader>tq", builtin.quickfix, { desc = "[t]elescope [q]uic
 vim.keymap.set("n", "<leader>tQ", builtin.quickfixhistory, { desc = "[t]elescope [Q]uickfix history" })
 vim.keymap.set("n", "<leader>tS", builtin.live_grep, { desc = "[t]elescope [S]earch live" })
 vim.keymap.set("n", "<leader>tk", builtin.grep_string, { desc = "[t]telescope grep [k]eyword" })
-vim.keymap.set("n", "<leader>ts", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
-vim.keymap.set("n", "<leader>tgb", builtin.git_branches, { desc = "[t]elescope [g]it [b]ranches"})
+vim.keymap.set("n", "<leader>ts", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+vim.keymap.set("n", "<leader>tgb", builtin.git_branches, { desc = "[t]elescope [g]it [b]ranches" })
 vim.keymap.set("n", "<leader>tb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>tn", "<CMD>Telescope notify<CR>" )
-
+vim.keymap.set("n", "<leader>tn", "<CMD>Telescope notify<CR>")
 
 vim.keymap.set("n", "<leader>tw", require("telescope").extensions.git_worktree.git_worktree, {
 	desc = "[t]elescope [w]orktrees",
 })
-vim.keymap.set("n", "<leader>tW", require('telescope').extensions.git_worktree.create_git_worktree, {
+vim.keymap.set("n", "<leader>tW", require("telescope").extensions.git_worktree.create_git_worktree, {
 	desc = "[t]elescope [W]orktrees",
 })

@@ -81,6 +81,15 @@ ins_left({
 })
 
 ins_left({
+	function ()
+		local current_commit = vim.fn.system("git rev-parse --short HEAD")
+		return current_commit
+	end,
+	icon = "",
+	color = { fg = colors.magenta, gui = "bold" },
+})
+
+ins_left({
 	function()
 		return string.match(vim.fn.getcwd(), '([^/]+)$')
 	end,
@@ -88,12 +97,6 @@ ins_left({
 	color = { fg = colors.green, gui = "bold" },
 })
 
-ins_left({
-	"filename",
-	cond = conditions.buffer_not_empty,
-	icon = "",
-	color = { fg = colors.magenta, gui = "bold" },
-})
 
 ins_left({ "location" })
 

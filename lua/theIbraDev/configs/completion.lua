@@ -51,9 +51,9 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "path" },
+		{ name = "copilot" },
 	}, {
 		{ name = "buffer" },
-		{ name = "copilot" },
 	}),
 })
 
@@ -69,7 +69,7 @@ cmp.setup.filetype({ "sql" }, {
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "buffer" },
+		{ name = "buffer", max_item_count = 10 },
 	},
 })
 
@@ -81,6 +81,7 @@ cmp.setup.cmdline(":", {
 	}, {
 		{
 			name = "cmdline",
+			max_item_count = 5,
 			option = {
 				ignore_cmds = { "Man", "!" },
 			},

@@ -51,9 +51,6 @@ require("mason-lspconfig").setup({
 		["ts_ls"] = function()
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
-				on_attach = function()
-					vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
-				end,
 				settings = {
 					javascript = {
 						inlayHints = {
@@ -129,6 +126,9 @@ autocmd("LspAttach", {
 		end, opts)
 		vim.keymap.set("n", "ga", function()
 			vim.lsp.buf.code_action()
+		end, opts)
+		vim.keymap.set("n", "gl", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, opts)
 
 		local next_diagnostic_repeat, prev_diagnostic_repeat =

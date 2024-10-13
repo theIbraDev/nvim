@@ -30,7 +30,7 @@ require("nvim-treesitter.configs").setup({
 		"vimdoc",
 		"query",
 	},
-	-- The greatest setting of all fucking time
+	-- THE GOAT OF VIM STRUCTURAL EDITING. Select, move, quries.
 	textobjects = {
 		select = {
 			enable = true,
@@ -40,45 +40,51 @@ require("nvim-treesitter.configs").setup({
 				["if"] = "@function.inner",
 				["al"] = "@loop.outer",
 				["il"] = "@loop.inner",
-				["at"] = "@comment.outer",
-				["it"] = "@comment.outer",
+				["ac"] = "@comment.outer",
+				["ic"] = "@comment.outer",
 				["ai"] = "@conditional.outer",
 				["ii"] = "@conditional.inner",
-				["an"] = "@assignment.lhs", -- Variable selector name
-				["in"] = "@assignment.lhs", -- Variable selector name
-				["av"] = "@assignment.outer", -- Variable selector value
-				["iv"] = "@assignment.rhs", -- Variable selector value
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
-				["aa"] = "@parameter.outer",
-				["ia"] = "@parameter.inner",
+				["ao"] = "@class.outer",
+				["io"] = "@class.inner",
+				["aa"] = "@parameter_actual.outer",
+				["ia"] = "@parameter_actual.inner",
+				["iA"] = "@attribute.inner",
+				["aA"] = "@attribute.outer",
+				["ir"] = "@return.inner",
+				["ar"] = "@return.outer",
 			},
-			include_surrounding_whitespace = true,
+			include_surrounding_whitespace = false, -- Many select operations becomes 10x more useful with this set to false
 		},
-
 		move = {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
-
 			goto_next_start = {
 				["mf"] = "@function.outer",
 				["ml"] = "@loop.outer",
-				["mt"] = "@comment.outer",
+				["mc"] = "@comment.outer",
 				["mi"] = "@conditional.outer",
-				["mv"] = "@assignment.rhs", -- Variable select value
 				["mn"] = "@assignment.lhs", -- Variable selector name
-				["mc"] = "@class.outer",
-				["ma"] = "@parameter.outer",
+				["mv"] = "@assignment.rhs", -- Variable select value
+				["mo"] = "@class.outer",
+				["ma"] = "@parameter_actual.outer",
+				["mt"] = "@element_text", -- HTML ELEMENT TEXT
+				["mA"] = "@attribute.outer", -- HTML attribute
+				["mr"] = "@return.outer",
+				["me"] = "@element.start",
 			},
 			goto_previous_start = {
 				["Mf"] = "@function.outer",
 				["Ml"] = "@loop.outer",
-				["Mt"] = "@comment.outer",
+				["Mc"] = "@comment.outer",
 				["Mi"] = "@conditional.outer",
-				["Mv"] = "@assignment.rhs", -- Variable select value
 				["Mn"] = "@assignment.lhs", -- Variable selector name
-				["Mc"] = "@class.outer",
-				["Ma"] = "@parameter.outer",
+				["Mv"] = "@assignment.rhs", -- Variable select value
+				["Mo"] = "@class.outer",
+				["Ma"] = "@parameter_actual.outer",
+				["mT"] = "@element_text", -- HTLM ELEMENT TEXT
+				["MA"] = "@attribute.outer", -- HTML attribute
+				["Mr"] = "@return.outer",
+				["Me"] = "@element.start",
 			},
 		},
 	},

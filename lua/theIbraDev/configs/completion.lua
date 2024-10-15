@@ -22,9 +22,6 @@ cmp.setup({
 			-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
 			ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 			show_labelDetails = true, -- show labelDetails in menu. Disabled by default
-			symbol_map = {
-				Copilot = "",
-			},
 		}),
 	},
 	snippet = {

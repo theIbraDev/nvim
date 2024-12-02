@@ -1,16 +1,17 @@
 return {
 	{
 		"nvim-lua/plenary.nvim",
-		name = "plenary"
+		name = "plenary",
 	},
 	{
-		'nvim-tree/nvim-web-devicons'
+		"nvim-tree/nvim-web-devicons",
 	},
 	{
-		'evanleck/vim-svelte',
+		"evanleck/vim-svelte",
+		-- "leafOfTree/vim-svelte-plugin",
 		dependencies = {
-			'pangloss/vim-javascript',
-			'othree/html5.vim',
-		}
-	}
+			"pangloss/vim-javascript",
+			"othree/html5.vim",
+		},
+	},
 }

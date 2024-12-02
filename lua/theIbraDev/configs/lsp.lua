@@ -13,7 +13,6 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"svelte",
 		"ts_ls",
-		"eslint",
 	},
 	handlers = {
 		-- The first entry (without a key) will be the default handler and will be called for each installed server
@@ -89,6 +88,16 @@ vim.diagnostic.config({
 		source = "always",
 		header = "",
 		prefix = "",
+	},
+
+	signs = {
+		text = {
+			-- Important to have atleast one space on the right of each icon!
+			[vim.diagnostic.severity.ERROR] = ' ',
+			[vim.diagnostic.severity.WARN] = ' ',
+			[vim.diagnostic.severity.INFO] = ' ',
+			[vim.diagnostic.severity.HINT] = ' 󰌵',
+		},
 	},
 })
 

@@ -7,7 +7,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true -- Display line numbers relative to the current line
 vim.opt.splitbelow = true -- Horizontal splits will be below
 vim.opt.splitright = true -- Vertical splits will be to the right
-vim.opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the fjdskaøjfklød ajf kl~|jf klødj})({øa fklø ajf klaø jfkldøa fjkladøs jfsdklø fjadkløtext each time
+vim.opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 vim.opt.shada = { "'10", "<0", "s10", "h" } -- Files to remember
 vim.opt.swapfile = false
 vim.opt.formatoptions:remove("o") -- Suprising how often this annoys me.
@@ -24,7 +24,7 @@ vim.opt.list = true
 vim.opt.listchars = "tab:| "
 
 -- Folds
-vim.o.foldcolumn = "0" -- '0' is not bad
+vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -36,7 +36,6 @@ vim.opt.undofile = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50

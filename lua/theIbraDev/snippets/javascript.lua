@@ -1,10 +1,5 @@
--- Example if you want to clear all the builtin snippets
- -- require("luasnip.session.snippet_collection").clear_snippets "elixir"
--- will exclude all javascript snippets
 require'luasnip'.filetype_extend("typescript", {"typescript"})
 local fmt = require("luasnip.extras.fmt").fmt
-
-
 local ls = require "luasnip"
 local s = ls.snippet
 local t = ls.text_node

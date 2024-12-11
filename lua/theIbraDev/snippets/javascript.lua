@@ -33,6 +33,33 @@ const {notification} = {{
             repeat_duplicates = true
         })),
 
+	s("svelteload", fmt([[
+export const load: {type} = async () => {{
+    {body}
+    return {{
+        {returns}
+    }}
+}}
+    ]], {
+        type = i(1, "PageServerLoad"),
+        body = i(2, "// Your load function logic"),
+        returns = i(3, "// Return values"),
+    })),
+	s("svelteactions", fmt([[
+export const actions: {actionType} = {{
+    default: async ({{ request }}: {type}) => {{
+        {body}
+        return {{
+            {returns}
+        }}
+    }}
+}}
+    ]], {
+        actionType = i(1, "Actions"),
+        type = i(2, "RequestEvent"),
+        body = i(3, "// Your action logic"),
+        returns = i(4, "// Return values"),
+    })),
     -- Add more below
 
 })

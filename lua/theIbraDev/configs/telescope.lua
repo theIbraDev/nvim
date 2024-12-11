@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>tgc", builtin.git_commits, { desc = "[t]elescope [g
 vim.keymap.set("n", "<leader>tq", builtin.quickfix, { desc = "[t]elescope [q]uickfix" })
 vim.keymap.set("n", "<leader>tQ", builtin.quickfixhistory, { desc = "[t]elescope [Q]uickfix history" })
 vim.keymap.set("n", "<leader>tS", builtin.live_grep, { desc = "[t]elescope [S]earch live" })
-vim.keymap.set("n", "<space>tS", require "theIbraDev.multi-ripgrep")
+vim.keymap.set("n", "<space>tS", require "lua.theIbraDev.telescope.multi-ripgrep")
 vim.keymap.set("n", "<leader>tk", builtin.grep_string, { desc = "[t]telescope grep [k]eyword" })
 vim.keymap.set("n", "<leader>ts", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })

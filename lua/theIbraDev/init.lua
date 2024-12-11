@@ -1,14 +1,15 @@
-require("theIbraDev.set")
-require("theIbraDev.remap")
-require("theIbraDev.lazy_init")
-require("theIbraDev.terminal")
+require("theIbraDev.settings.set")
+require("theIbraDev.settings.remap")
+require("theIbraDev.lazy_init") -- Set & remap has to always be in front of lazy_init
+require("theIbraDev.sveltekit.movements")
+require("theIbraDev.terminal.terminal")
+require("theIbraDev.theme")
 require("theIbraDev.theme")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local ibraGroup = augroup("ibraGroup", {})
-local startup = augroup("onStartup", {})
 local yank_group = augroup("HighlightYank", {})
 
 function R(name)
